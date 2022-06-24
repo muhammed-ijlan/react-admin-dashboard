@@ -2,16 +2,20 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import Home from "./pages/home/Home";
 
-import './App.css'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import "./App.css";
 
 function App() {
-  return <div>
-    <Topbar />
-    <div className="container">
-      <Sidebar />
-      <Home />
+  return (
+    <div>
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        <Home />
+      </div>
     </div>
-  </div>
+  );
 }
 
 export default App;
