@@ -1,0 +1,7 @@
+.widgetSm {
+  flex: 1;
+  -webkit-box-shadow: 1px 0px 11px -2px #888888;
+  box-shadow: 1px 0px 11px -2px #888888;
+  padding: 20px;
+  margin-right: 20px;
+}
