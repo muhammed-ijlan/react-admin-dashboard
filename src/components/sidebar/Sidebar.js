@@ -27,16 +27,18 @@ export default function Sidebar() {
                 <div className='sidebarMenu'>
                     <h2 className='sidebarTitle'>Quick Menu</h2>
                     <ul className='sidebarList'>
-                        <Link to='/users'>
+                        <Link to='/users' className='link'>
                             <li className='sidebarListItem'>
                                 <Person className='sidebarIcon' />
                                 Users
                             </li>
                         </Link>
-                        <li className='sidebarListItem'>
-                            <Store className='sidebarIcon' />
-                            Products
-                        </li>
+                        <Link to='/products' className='link'>
+                            <li className='sidebarListItem'>
+                                <Store className='sidebarIcon' />
+                                Products
+                            </li>
+                        </Link>
                         <li className='sidebarListItem'>
                             <AttachMoney className='sidebarIcon' />
                             Transactions
