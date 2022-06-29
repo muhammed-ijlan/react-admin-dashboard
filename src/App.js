@@ -12,20 +12,28 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import Login from "./pages/login/login";
 
 
 function App() {
 
   return (
     <Router>
-      <Topbar />
-      <div className="container">
-        <Sidebar />
-        <Switch>
+      <Switch>
+
+        <Route path='/login'>
+          <Login />
+        </Route>
+
+        <Topbar />
+        <div className="container">
+          <Sidebar />
 
           <Route exact path='/'>
             <Home />
           </Route>
+
+
 
           <Route path='/users'>
             <UserList />
@@ -50,8 +58,8 @@ function App() {
             <NewProduct />
           </Route>
 
-        </Switch>
-      </div>
+        </div>
+      </Switch>
     </Router>
   );
 }
