@@ -38,7 +38,7 @@ export default function Sidebar() {
                         <Link to='/products' className='link'>
                             <li className='sidebarListItem'>
                                 <Store className='sidebarIcon' />
-                                Products
+                                Movies
                             </li>
                         </Link>
                         <li className='sidebarListItem'>
