@@ -1,6 +1,6 @@
 import React from 'react'
 import './Sidebar.css'
-import { LineStyle, Timeline, TrendingUp, Person, Store, AttachMoney, MailOutline, Equalizer, Feedback, Message, WorkOutline, Report } from '@material-ui/icons'
+import { LineStyle, Timeline, TrendingUp, Person, AttachMoney, MailOutline, Equalizer, Feedback, Message, WorkOutline, Report, PlayCircleOutline } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
@@ -35,9 +35,9 @@ export default function Sidebar() {
                                 Users
                             </li>
                         </Link>
-                        <Link to='/products' className='link'>
+                        <Link to='/movies' className='link'>
                             <li className='sidebarListItem'>
-                                <Store className='sidebarIcon' />
+                                <PlayCircleOutline className='sidebarIcon' />
                                 Movies
                             </li>
                         </Link>
