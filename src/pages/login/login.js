@@ -4,7 +4,7 @@ import { login } from '../../context/authContext/apiCalls'
 import { AuthContext } from '../../context/authContext/AuthContext'
 
 
-export default function () {
+export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const { isFetching, dispatch } = useContext(AuthContext)

@@ -2,7 +2,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import Home from "./pages/home/Home";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 
 import "./App.css";
@@ -12,53 +12,61 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
-import Login from "./pages/login/login";
+import Login from "./pages/login/Login";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext/AuthContext";
 
 
 function App() {
+  const { user } = useContext(AuthContext)
+
+
 
   return (
     <Router>
       <Switch>
 
         <Route path='/login'>
-          <Login />
-        </Route>
+          {user ? <Redirect to='/' /> : <Login />} </Route>
 
-        <Topbar />
-        <div className="container">
-          <Sidebar />
+        {user &&
+          <>
+            <Topbar />
+            <div className="container">
+              <Sidebar />
 
-          <Route exact path='/'>
-            <Home />
-          </Route>
+              <Route exact path='/'>
+                <Home />
+              </Route>
 
 
 
-          <Route path='/users'>
-            <UserList />
-          </Route>
+              <Route path='/users'>
+                <UserList />
+              </Route>
 
-          <Route path='/user/:userId'>
-            <User />
-          </Route>
-          <Route path='/newUser'>
-            <NewUser />
-          </Route>
+              <Route path='/user/:userId'>
+                <User />
+              </Route>
+              <Route path='/newUser'>
+                <NewUser />
+              </Route>
 
-          <Route path='/movies'>
-            <ProductList />
-          </Route>
+              <Route path='/movies'>
+                <ProductList />
+              </Route>
 
-          <Route path='/product/:productId'>
-            <Product />
-          </Route>
+              <Route path='/product/:productId'>
+                <Product />
+              </Route>
 
-          <Route path='/newProduct'>
-            <NewProduct />
-          </Route>
+              <Route path='/newProduct'>
+                <NewProduct />
+              </Route>
 
-        </div>
+            </div>
+          </>
+        }
       </Switch>
     </Router>
   );
