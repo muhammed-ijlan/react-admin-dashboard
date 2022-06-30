@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { productRows } from "../../components/featuredInfo/chart/dummyData";
 import { Link } from "react-router-dom";
 import "./ProductList.css";
 import { MovieContext } from "../../context/movieContext/MovieContext"
-import { getMovies } from '../../context/movieContext/apiCalls'
+import { deleteMovie, getMovies } from '../../context/movieContext/apiCalls'
 
 export default function ProductList() {
     const { movies, dispatch } = useContext(MovieContext)
@@ -16,7 +15,7 @@ export default function ProductList() {
     }, [dispatch])
 
     const handleDelete = (id) => {
-        // setData(data.filter((item) => item.id !== id));
+        deleteMovie(id, dispatch)
     };
     const columns = [
         { field: "_id", headerName: "ID", width: 90 },
@@ -29,7 +28,7 @@ export default function ProductList() {
                     <div className="productListProuct">
                         <img
                             className="productListImg"
-                            src={params.row.image}
+                            src={params.row.img}
                             alt="pic"
                         ></img>
                         {params.row.title}
@@ -53,7 +52,7 @@ export default function ProductList() {
                         </Link>
                         <DeleteOutline
                             className="productListDel"
-                            onClick={() => handleDelete(params.row.id)}
+                            onClick={() => handleDelete(params.row._id)}
                         />
                     </div>
                 );

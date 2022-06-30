@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react"; import axios from 'axios'
 import Chart from '../../components/featuredInfo/chart/Chart'
 import FeaturedInfo from '../../components/featuredInfo/FeaturedInfo'
-import { userData } from '../../components/featuredInfo/chart/dummyData'
 import WidgetSm from '../../components/widgetSm/WidgetSm'
 import WidgetLg from '../../components/widgetLg/WidgetLg'
 
