@@ -5,7 +5,7 @@ export const getMoviesSuccess = (movies) => ({
     type: "GET_MOVIES_SUCCESS",
     payload: movies
 })
-export const getMovieFailure = () => ({
+export const getMoviesFailure = () => ({
     type: "GET_MOVIE_FAILURE"
 })
 

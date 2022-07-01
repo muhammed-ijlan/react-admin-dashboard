@@ -17,18 +17,18 @@ export const getMovies = async (dispatch) => {
 
 //create
 export const createMovie = async (movie, dispatch) => {
-    dispatch(createMovieStart())
+    dispatch(createMovieStart());
     try {
-        const res = await axios.post('/movies/', movie, {
+        const res = await axios.post("/movies", movie, {
             headers: {
-                token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken
-            }
-        })
-        dispatch(createMovieSuccess(res.data))
+                token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            },
+        });
+        dispatch(createMovieSuccess(res.data));
     } catch (err) {
-        dispatch(createMovieFailure())
+        dispatch(createMovieFailure());
     }
-}
+};
 
 
 //delete
