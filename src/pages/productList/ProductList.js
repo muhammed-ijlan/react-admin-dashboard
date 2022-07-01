@@ -8,6 +8,7 @@ import { MovieContext } from "../../context/movieContext/MovieContext"
 import { deleteMovie, getMovies } from '../../context/movieContext/apiCalls'
 
 export default function ProductList() {
+
     const { movies, dispatch } = useContext(MovieContext)
 
     useEffect(() => {
@@ -47,7 +48,7 @@ export default function ProductList() {
             renderCell: (params) => {
                 return (
                     <div>
-                        <Link to={`/product/${params.row.id}`}>
+                        <Link to={{ pathname: "/product/" + params.row._id, movie: params.row }}>
                             <button className="productListEdit">Edit</button>
                         </Link>
                         <DeleteOutline
