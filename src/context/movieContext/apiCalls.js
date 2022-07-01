@@ -28,3 +28,4 @@ export const deleteMovie = async (id, dispatch) => {
         dispatch(deleteMovieFailure())
     }
 }
+

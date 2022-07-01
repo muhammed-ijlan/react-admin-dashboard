@@ -37,6 +37,7 @@ export default function NewProduct() {
     function handleUpload(e) {
         e.preventDefault();
 
+
         upload([
             { file: img, label: "img" },
             { file: imgTitle, label: "imgTitle" },
