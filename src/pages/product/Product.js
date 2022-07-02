@@ -11,7 +11,7 @@ export default function Product() {
         <div className="product">
             <div className="productTitleContainer">
                 <h1 className="productTitle">Movie</h1>
-                <Link to="/newproduct">
+                <Link to="/newmovie">
                     <button className="productAddButton">Create</button>
                 </Link>
             </div>
@@ -44,7 +44,7 @@ export default function Product() {
                     </div>
                 </div>
             </div>
-            <div className="productBottom">
+            {/* <div className="productBottom">
                 <form className="productForm">
                     <div className="productFormLeft">
                         <label>Movie Title</label>
@@ -71,7 +71,7 @@ export default function Product() {
                         <button className="productButton">Update</button>
                     </div>
                 </form>
-            </div>
+            </div> */}
         </div>
     )
 }
