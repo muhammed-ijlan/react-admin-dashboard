@@ -17,6 +17,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/authContext/AuthContext";
 import MovieList from "./pages/movieList/MovieList";
 import List from "./pages/list/List";
+import NewList from "./pages/newList/NewList";
 
 
 function App() {
