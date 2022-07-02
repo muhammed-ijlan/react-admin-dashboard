@@ -1,12 +1,12 @@
 export const getListsStart = () => ({
-    type: "GET_MOVIES_START"
+    type: "GET_LISTS_START"
 })
 export const getListsSuccess = (movies) => ({
-    type: "GET_MOVIES_SUCCESS",
+    type: "GET_LISTS_SUCCESS",
     payload: movies
 })
 export const getListsFailure = () => ({
-    type: "GET_MOVIES_FAILURE"
+    type: "GET_LISTS_FAILURE"
 })
 
 //create
@@ -34,14 +34,14 @@ export const getListsFailure = () => ({
 // })
 
 
-// //delele
-// export const deleteMovieStart = () => ({
-//     type: "DELETE_MOVIE_FAILURE"
-// })
-// export const deleteMovieSuccess = (id) => ({
-//     type: "DELETE_MOVIE_FAILURE",
-//     payload: id
-// })
-// export const deleteMovieFailure = () => ({
-//     type: "DELETE_MOVIE_FAILURE"
-// })
+//delele
+export const deleteListStart = () => ({
+    type: "DELETE_LIST_FAILURE"
+})
+export const deleteListSuccess = (id) => ({
+    type: "DELETE_LIST_FAILURE",
+    payload: id
+})
+export const deleteListFailure = () => ({
+    type: "DELETE_LIST_FAILURE"
+})

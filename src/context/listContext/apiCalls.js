@@ -1,4 +1,4 @@
-import { getListsStart, getListsFailure, getListsSuccess } from './ListActions'
+import { getListsStart, getListsFailure, getListsSuccess, deleteListFailure, deleteListStart, deleteListSuccess } from './ListActions'
 import axios from 'axios'
 
 // getlist
@@ -32,18 +32,18 @@ export const getLists = async (dispatch) => {
 // };
 
 
-// //delete
-// export const deleteMovie = async (id, dispatch) => {
-//     dispatch(deleteMovieStart())
-//     try {
-//         await axios.delete('/movies/' + id, {
-//             headers: {
-//                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken
-//             }
-//         })
-//         dispatch(deleteMovieSuccess(id))
-//     } catch (err) {
-//         dispatch(deleteMovieFailure())
-//     }
-// }
+//delete
+export const deleteLists = async (id, dispatch) => {
+    dispatch(deleteListStart())
+    try {
+        await axios.delete('/lists/' + id, {
+            headers: {
+                token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken
+            }
+        })
+        dispatch(deleteListSuccess(id))
+    } catch (err) {
+        dispatch(deleteListFailure())
+    }
+}
 

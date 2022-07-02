@@ -1,6 +1,6 @@
 import React from 'react'
 import './Sidebar.css'
-import { LineStyle, Timeline, TrendingUp, Person, AttachMoney, MailOutline, Equalizer, Feedback, Message, WorkOutline, Report, PlayCircleOutline, List } from '@material-ui/icons'
+import { LineStyle, Timeline, TrendingUp, Person, MailOutline, Equalizer, Feedback, Message, WorkOutline, Report, PlayCircleOutline, List } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 
 export default function Sidebar() {

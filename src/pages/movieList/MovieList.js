@@ -3,27 +3,26 @@ import React, { useContext, useEffect } from "react";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import "./ProductList.css";
-import { MovieContext } from "../../context/movieContext/MovieContext"
-import { deleteMovie, getMovies } from '../../context/movieContext/apiCalls'
+import "./MovieList.css";
+import { ListContext } from "../../context/listContext/ListContext"
+import { deleteLists, getLists } from "../../context/listContext/apiCalls";
 
-export default function ProductList() {
+export default function MovieList() {
 
-    const { movies, dispatch } = useContext(MovieContext)
+    const { lists, dispatch } = useContext(ListContext)
 
     useEffect(() => {
-        getMovies(dispatch)
+        getLists(dispatch)
     }, [dispatch])
 
     const handleDelete = (id) => {
-        deleteMovie(id, dispatch)
+        deleteLists(id, dispatch)
     };
     const columns = [
-        { field: "_id", headerName: "ID", width: 90 },
-        { field: "genre", headerName: "Genre", width: 120 },
-        { field: "year", headerName: "Year", width: 120 },
-        { field: "limit", headerName: "limit", width: 120 },
-        { field: "isSeries", headerName: "Is Series", width: 120 },
+        { field: "_id", headerName: "ID", width: 200 },
+        { field: "title", headerName: "title", width: 250 },
+        { field: "genre", headerName: "Genre", width: 150 },
+        { field: "type", headerName: "type", width: 150 },
         {
             field: "action",
             headerName: "Action",
@@ -31,7 +30,7 @@ export default function ProductList() {
             renderCell: (params) => {
                 return (
                     <div>
-                        <Link to={{ pathname: "/product/" + params.row._id, movie: params.row }}>
+                        <Link to={{ pathname: "/list/" + params.row._id, list: params.row }}>
                             <button className="productListEdit">Edit</button>
                         </Link>
                         <DeleteOutline
@@ -47,7 +46,7 @@ export default function ProductList() {
     return (
         <div className="productList">
             <DataGrid
-                rows={movies}
+                rows={lists}
                 disableSelectionOnClick
                 columns={columns}
                 pageSize={8}
