@@ -40,21 +40,7 @@ export default function List() {
                     </div>
                 </div>
             </div>
-            <div className="productBottom">
-                <form className="productForm">
-                    <div className="productFormLeft">
-                        <label>List Title</label>
-                        <input type="text" placeholder={list.title} />
-                        <label>type</label>
-                        <input type="text" placeholder={list.type} name="" id="" />
-                        <label>Genre</label>
-                        <input type="text" placeholder={list.genre} name="" id="" />
-                    </div>
-                    <div className="productFormRight">
-                        <button className="productButton">Update</button>
-                    </div>
-                </form>
-            </div>
+
         </div>
     )
 }

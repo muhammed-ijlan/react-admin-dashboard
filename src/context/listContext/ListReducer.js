@@ -21,27 +21,27 @@ const ListReducer = (state, action) => {
                 error: true
             }
 
-        // //create
-        // case "CREATE_MOVIE_START":
-        //     return {
-        //         ...state,
-        //         isFetching: true,
-        //         error: false
-        //     }
+        //create
+        case "CREATE_LIST_START":
+            return {
+                ...state,
+                isFetching: true,
+                error: false
+            }
 
-        // case "CREATE_MOVIE_SUCCESS":
-        //     return {
-        //         movies: [...state.movies, action.payload],
-        //         isFetching: false,
-        //         error: false
-        //     }
+        case "CREATE_LIST_SUCCESS":
+            return {
+                Lists: [...state.lists, action.payload],
+                isFetching: false,
+                error: false
+            }
 
-        // case "CREATE_MOVIE_FAILURE":
-        //     return {
-        //         ...state,
-        //         isFetching: false,
-        //         error: true
-        //     }
+        case "CREATE_LIST_FAILURE":
+            return {
+                ...state,
+                isFetching: false,
+                error: true
+            }
 
         // //update
         // case "UPDATE_MOVIE_START":
