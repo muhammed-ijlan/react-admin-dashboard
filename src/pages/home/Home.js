@@ -5,6 +5,7 @@ import WidgetSm from '../../components/widgetSm/WidgetSm'
 import WidgetLg from '../../components/widgetLg/WidgetLg'
 
 import './Home.css'
+import { axiosInstance } from "../../config";
 
 export default function Home() {
 
@@ -15,9 +16,9 @@ export default function Home() {
     useEffect(() => {
         const getStats = async () => {
             try {
-                const res = await axios.get("/users/stats", {
+                const res = await axiosInstance.get("/users/stats", {
                     headers: {
-                        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYjk4NWY5YTg5ODQ0YjUzOTk5MjQwYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NjU4MTE4NywiZXhwIjoxNjU3MDEzMTg3fQ.haAPohUJH80NgShCskXYJ6zTwlC0oXFnzc3FA3kUDog"
+                        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
                     }
                 })
 
