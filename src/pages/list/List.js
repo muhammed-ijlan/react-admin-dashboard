@@ -43,27 +43,14 @@ export default function List() {
             <div className="productBottom">
                 <form className="productForm">
                     <div className="productFormLeft">
-                        <label>List type</label>
-                        <input type="text" placeholder={list.type} />
-                        <label>Year</label>
-                        <input type="text" placeholder={list.year} name="" id="" />
+                        <label>List Title</label>
+                        <input type="text" placeholder={list.title} />
+                        <label>type</label>
+                        <input type="text" placeholder={list.type} name="" id="" />
                         <label>Genre</label>
                         <input type="text" placeholder={list.genre} name="" id="" />
-                        <label>Liimit</label>
-                        <input type="text" placeholder={list.limit} name="" id="" />
-                        <label>Trailer</label>
-                        <input type="file" placeholder={list.trailer} name="" id="" />
-                        <label>Video</label>
-                        <input type="file" placeholder={list.video} name="" id="" />
                     </div>
                     <div className="productFormRight">
-                        <div className="productUpload">
-                            <img src={movie.img} alt="" className="productUploadImg" />
-                            <label for="file">
-                                <Publish />
-                            </label>
-                            <input type="file" id="file" style={{ display: "none" }} />
-                        </div>
                         <button className="productButton">Update</button>
                     </div>
                 </form>

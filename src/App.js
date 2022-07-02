@@ -16,6 +16,7 @@ import Login from "./pages/login/Login";
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext/AuthContext";
 import MovieList from "./pages/movieList/MovieList";
+import List from "./pages/list/List";
 
 
 function App() {
@@ -70,11 +71,11 @@ function App() {
               </Route>
 
               <Route path='/list/:listId'>
-                <Product />
+                <List />
               </Route>
 
               <Route path='/newList'>
-                <NewProduct />
+                <NewList />
               </Route>
 
             </div>
